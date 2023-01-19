@@ -13,14 +13,14 @@
         <TableRow
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_weight="3">
+            android:layout_weight="1">
 
             <ImageView
-                android:id="@+id/imageView"
+                android:id="@+id/imgElClase"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_height="411dp"
                 android:layout_weight="1"
-                app:srcCompat="@drawable/jesucristo_inicio" />
+                app:srcCompat="@drawable/jesucristo_inicio__1___1_" />
         </TableRow>
 
         <TableRow
@@ -29,28 +29,33 @@
             android:layout_weight="1">
 
             <Button
-                android:id="@+id/button4"
+                android:id="@+id/bElPBerserker"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_weight="1" />
+                android:layout_weight="1"
+                android:text="Berserker"
+                android:textSize="13sp" />
 
             <Button
-                android:id="@+id/button3"
+                android:id="@+id/bElPLadron"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_weight="1" />
+                android:text="Ladron"
+                android:textSize="13sp" />
 
             <Button
-                android:id="@+id/button2"
+                android:id="@+id/bElPMago"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_weight="1" />
+                android:text="Mago"
+                android:textSize="13sp" />
 
             <Button
-                android:id="@+id/button"
+                android:id="@+id/bElPGuerrero"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_weight="1" />
+                android:text="Guerrero"
+                android:textSize="13sp" />
         </TableRow>
 
         <TableRow
@@ -59,11 +64,11 @@
             android:layout_weight="1" >
 
             <Button
-                android:id="@+id/button5"
+                android:id="@+id/bElPInicio"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="Button" />
+                android:text="Siguiente" />
         </TableRow>
 
     </TableLayout>

@@ -3,38 +3,31 @@ package com.manumegia.multimedianavidad
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.widget.Button
-import android.widget.ImageView
+import com.manumegia.multimedianavidad.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
-        var bGuerrero = findViewById<Button>(R.id.button)
-        var bLadron = findViewById<Button>(R.id.button2)
-        var bMago = findViewById<Button>(R.id.button3)
-        var bBerserker = findViewById<Button>(R.id.button4)
-        var bInicio = findViewById<Button>(R.id.button5)
-        var fInicio = findViewById<ImageView>(R.id.imageView)
+        val binding = ActivityMainBinding.inflate(layoutInflater)
+        setContentView(binding.root)
 
-        bGuerrero.setOnClickListener {
-            fInicio.setImageResource(R.drawable.jesucristoguerrero)
+        binding.bElPGuerrero.setOnClickListener {
+            binding.imgElClase.setImageResource(R.drawable.jesucristo_guerrero)
         }
 
-        bLadron.setOnClickListener {
-            fInicio.setImageResource(R.drawable.jesucristoladron)
+        binding.bElPLadron.setOnClickListener {
+            binding.imgElClase.setImageResource(R.drawable.jesucristoladron__1_)
         }
 
-        bMago.setOnClickListener {
-            fInicio.setImageResource(R.drawable.jesucristo_mago)
+        binding.bElPMago.setOnClickListener {
+            binding.imgElClase.setImageResource(R.drawable.jesucristo_mago)
         }
 
-        bBerserker.setOnClickListener {
-            fInicio.setImageResource(R.drawable.jesucristo_berserker)
+        binding.bElPBerserker.setOnClickListener {
+            binding.imgElClase.setImageResource(R.drawable.jesucristo_berserkeraii)
         }
 
-
-        bInicio.setOnClickListener {
+        binding.bElPInicio.setOnClickListener {
             val intent = Intent(this, PantallaClases::class.java)
             startActivity(intent)
         }
