@@ -36,9 +36,9 @@ class PantallaConfirmacionPersonaje : AppCompatActivity() {
         binding.button2.setOnClickListener {
             var nombre = binding.editText.text.toString()
             var p1 = Personaje(nombre, raza.toString(), clase.toString())
-            binding.textView.text = p1.toString()
 
             val intent = Intent(this, PantallaBlanco::class.java)
+            intent.putExtra("personajeCreado", p1.toString())
             startActivity(intent)
         }
     }
