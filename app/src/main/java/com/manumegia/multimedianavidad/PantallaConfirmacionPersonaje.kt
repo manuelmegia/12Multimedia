@@ -2,7 +2,10 @@ package com.manumegia.multimedianavidad
 
 import android.content.Intent
 import android.os.Bundle
+import android.text.Editable
+import android.text.TextWatcher
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.widget.addTextChangedListener
 import com.manumegia.multimedianavidad.databinding.ActivityPantallaConfirmacionPersonajeBinding
 
 class PantallaConfirmacionPersonaje : AppCompatActivity() {
@@ -27,6 +30,15 @@ class PantallaConfirmacionPersonaje : AppCompatActivity() {
             "mago" -> binding.tuClaseFoto.setImageResource(R.drawable.jesucristo_mago)
             "ladron" -> binding.tuClaseFoto.setImageResource(R.drawable.jesucristoladron__1_)
         }
+
+        binding.editText.addTextChangedListener (object: TextWatcher {
+            override fun beforeTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {}
+            override fun afterTextChanged(p0: Editable?) {}
+
+            override fun onTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {
+                binding.button2.isEnabled = binding.editText.text.toString() == ""
+            }
+        })
 
         binding.button.setOnClickListener {
             val intent = Intent(this, MainActivity::class.java)
