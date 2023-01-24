@@ -5,7 +5,7 @@ import kotlin.random.Random
 class Personaje (private var nombre: String,
                  private var raza: String,
                  private var clase: String,
-    ){
+    ): java.io.Serializable{
 
 
     var fuerza: Int = Random.nextInt(10, 15)

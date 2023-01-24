@@ -38,8 +38,10 @@ class PantallaConfirmacionPersonaje : AppCompatActivity() {
             var p1 = Personaje(nombre, raza.toString(), clase.toString())
 
             val intent = Intent(this, PantallaBlanco::class.java)
-            intent.putExtra("personajeCreado", p1.toString())
+            intent.putExtra("personajeCreado", p1)
             startActivity(intent)
         }
     }
 }
+
+

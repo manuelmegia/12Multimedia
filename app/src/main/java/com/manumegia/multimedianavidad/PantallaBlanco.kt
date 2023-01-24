@@ -1,9 +1,8 @@
 package com.manumegia.multimedianavidad
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import androidx.appcompat.app.AppCompatActivity
 import com.manumegia.multimedianavidad.databinding.ActivityPantallaBlancoBinding
-import com.manumegia.multimedianavidad.databinding.ActivityPantallaConfirmacionPersonajeBinding
 
 class PantallaBlanco : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -11,7 +10,7 @@ class PantallaBlanco : AppCompatActivity() {
         val binding = ActivityPantallaBlancoBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        val pCreado = intent.getStringExtra("personajeCreado")
-        binding.textView2.text = pCreado
+        val pCreado: Personaje = intent.getSerializableExtra("personajeCreado") as Personaje
+        binding.textView2.text = pCreado.toString()
     }
 }
