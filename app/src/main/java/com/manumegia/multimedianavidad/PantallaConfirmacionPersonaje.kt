@@ -14,6 +14,7 @@ class PantallaConfirmacionPersonaje : AppCompatActivity() {
         val binding = ActivityPantallaConfirmacionPersonajeBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+        binding.button2.isEnabled = false
         val raza = intent.getStringExtra("tipoRaza")
         val clase = intent.getStringExtra("tipoClase")
 
@@ -36,7 +37,7 @@ class PantallaConfirmacionPersonaje : AppCompatActivity() {
             override fun afterTextChanged(p0: Editable?) {}
 
             override fun onTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {
-                binding.button2.isEnabled = binding.editText.text.toString() == ""
+                binding.button2.isEnabled = binding.editText.text.toString() != ""
             }
         })
 
