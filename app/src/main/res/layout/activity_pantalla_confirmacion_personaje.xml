@@ -16,7 +16,7 @@
             android:layout_weight="1">
 
             <EditText
-                android:id="@+id/editText"
+                android:id="@+id/textNombre"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:hint="Introduce tu Nombre" />
@@ -48,14 +48,14 @@
             android:layout_weight="1">
 
             <Button
-                android:id="@+id/button"
+                android:id="@+id/btCDeNuevo"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:text="Comenzar de Nuevo" />
 
             <Button
-                android:id="@+id/button2"
+                android:id="@+id/btCAventura"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"

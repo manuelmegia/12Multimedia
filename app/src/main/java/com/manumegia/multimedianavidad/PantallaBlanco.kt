@@ -12,6 +12,5 @@ class PantallaBlanco : AppCompatActivity() {
 
         val pCreado: Personaje = intent.getSerializableExtra("personajeCreado") as Personaje
         binding.textView2.text = pCreado.toString()
-        val webo = ""
     }
 }

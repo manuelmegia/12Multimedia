@@ -5,7 +5,6 @@ import android.os.Bundle
 import android.text.Editable
 import android.text.TextWatcher
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.widget.addTextChangedListener
 import com.manumegia.multimedianavidad.databinding.ActivityPantallaConfirmacionPersonajeBinding
 
 class PantallaConfirmacionPersonaje : AppCompatActivity() {
@@ -14,7 +13,7 @@ class PantallaConfirmacionPersonaje : AppCompatActivity() {
         val binding = ActivityPantallaConfirmacionPersonajeBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        binding.button2.isEnabled = false
+        binding.btCAventura.isEnabled = false
         val raza = intent.getStringExtra("tipoRaza")
         val clase = intent.getStringExtra("tipoClase")
 
@@ -32,25 +31,25 @@ class PantallaConfirmacionPersonaje : AppCompatActivity() {
             "ladron" -> binding.tuClaseFoto.setImageResource(R.drawable.jesucristoladron__1_)
         }
 
-        binding.editText.addTextChangedListener (object: TextWatcher {
+        binding.textNombre.addTextChangedListener (object: TextWatcher {
             override fun beforeTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {}
             override fun afterTextChanged(p0: Editable?) {}
 
             override fun onTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {
-                binding.button2.isEnabled = binding.editText.text.toString() != ""
+                binding.btCAventura.isEnabled = binding.textNombre.text.toString() != ""
             }
         })
 
-        binding.button.setOnClickListener {
+        binding.btCDeNuevo.setOnClickListener {
             val intent = Intent(this, MainActivity::class.java)
             startActivity(intent)
         }
 
-        binding.button2.setOnClickListener {
-            var nombre = binding.editText.text.toString()
+        binding.btCAventura.setOnClickListener {
+            var nombre = binding.textNombre.text.toString()
             var p1 = Personaje(nombre, raza.toString(), clase.toString())
 
-            val intent = Intent(this, PantallaBlanco::class.java)
+            val intent = Intent(this, PantallaDado::class.java)
             intent.putExtra("personajeCreado", p1)
             startActivity(intent)
         }

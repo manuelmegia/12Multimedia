@@ -8,8 +8,8 @@ class Personaje (private var nombre: String,
     ): java.io.Serializable{
 
 
-    var fuerza: Int = Random.nextInt(10, 15)
-    var defensa: Int = Random.nextInt(1, 5)
+    var fuerza: Int = Random.nextInt(10, 16)
+    var defensa: Int = Random.nextInt(1, 6)
     var pesoMochila: Int = 100
     var vida: Int = 200
     var monedero = HashMap<Int, Int>()
