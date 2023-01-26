@@ -11,17 +11,11 @@ class PantallaEncontrarEnemigo : AppCompatActivity() {
         val binding = ActivityPantallaEncontrarEnemigoBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        val p1: Personaje = intent.getSerializableExtra("personajeCreado") as Personaje
-
         binding.btnHuir.setOnClickListener {
-            val intent = Intent(this, PantallaDado::class.java)
-            intent.putExtra("personajeCreado", p1)
-            startActivity(intent)
+            this.navigateTo(PantallaDado::class.java)
         }
         binding.btnLuchar.setOnClickListener {
-            val intent = Intent(this, PantallaBlanco::class.java)
-            intent.putExtra("personajeCreado", p1)
-            startActivity(intent)
+            this.navigateTo(PantallaBlanco::class.java)
         }
     }
 }

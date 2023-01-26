@@ -11,17 +11,11 @@ class PantallaEncontrarCiudad : AppCompatActivity() {
         val binding = ActivityPantallaEncontrarCiudadBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        val p1: Personaje = intent.getSerializableExtra("personajeCreado") as Personaje
-
         binding.btnContinuar.setOnClickListener {
-            val intent = Intent(this, PantallaDado::class.java)
-            intent.putExtra("personajeCreado", p1)
-            startActivity(intent)
+            this.navigateTo(PantallaDado::class.java)
         }
         binding.btnEntrar.setOnClickListener {
-            val intent = Intent(this, PantallaBlanco::class.java)
-            intent.putExtra("personajeCreado", p1)
-            startActivity(intent)
+            this.navigateTo(PantallaBlanco::class.java)
         }
     }
 }

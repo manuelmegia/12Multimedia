@@ -11,17 +11,15 @@ class PantallaEncontrarObjeto : AppCompatActivity() {
         val binding = ActivityPantallaEncontrarObjetoBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        val p1: Personaje = intent.getSerializableExtra("personajeCreado") as Personaje
+        var espadaCrucifijo = Articulo("espadaCrucifijo")
 
         binding.btnContinuar.setOnClickListener {
-            val intent = Intent(this, PantallaDado::class.java)
-            intent.putExtra("personajeCreado", p1)
-            startActivity(intent)
+            this.navigateTo(PantallaDado::class.java)
         }
         binding.btnRecoger.setOnClickListener {
-            val intent = Intent(this, PantallaBlanco::class.java)
-            intent.putExtra("personajeCreado", p1)
-            startActivity(intent)
+            miPersonaje().mochila.addArticulo(espadaCrucifijo)
+            this.navigateTo(PantallaBlanco::class.java)
         }
     }
+
 }

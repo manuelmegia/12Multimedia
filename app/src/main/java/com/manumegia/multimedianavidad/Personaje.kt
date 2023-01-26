@@ -8,9 +8,10 @@ class Personaje (private var nombre: String,
     ): java.io.Serializable{
 
 
+    var pesoMochila: Int = 100
+    var mochila = Mochila(pesoMochila)
     var fuerza: Int = Random.nextInt(10, 16)
     var defensa: Int = Random.nextInt(1, 6)
-    var pesoMochila: Int = 100
     var vida: Int = 200
     var monedero = HashMap<Int, Int>()
 
@@ -23,7 +24,8 @@ class Personaje (private var nombre: String,
     }
 
     override fun toString(): String {
-        return "Personaje(nombre='$nombre', raza='$raza', clase='$clase', fuerza=$fuerza, defensa=$defensa, pesoMochila=$pesoMochila, vida=$vida, monedero=$monedero)"
+        return "Personaje(nombre='$nombre', raza='$raza', clase='$clase', pesoMochila=$pesoMochila, mochila=$mochila, fuerza=$fuerza, defensa=$defensa, vida=$vida, monedero=$monedero)"
     }
+
 }
 
