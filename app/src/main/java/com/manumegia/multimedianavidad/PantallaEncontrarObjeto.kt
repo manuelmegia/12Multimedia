@@ -12,12 +12,16 @@ class PantallaEncontrarObjeto : AppCompatActivity() {
         setContentView(binding.root)
 
         var espadaCrucifijo = Articulo("espadaCrucifijo")
+        var objetoSobrante = Articulo("objetoSobrante")
 
         binding.btnContinuar.setOnClickListener {
             this.navigateTo(PantallaDado::class.java)
         }
         binding.btnRecoger.setOnClickListener {
-            miPersonaje().mochila.addArticulo(espadaCrucifijo)
+            val intent = Intent(this, PantallaClases::class.java)
+            intent.putExtra("objetoEntra", miPersonaje().mochila.addArticulo(espadaCrucifijo))
+            intent.putExtra("objetoNoEntra",miPersonaje().mochila.addArticulo(objetoSobrante))
+
             this.navigateTo(PantallaBlanco::class.java)
         }
     }

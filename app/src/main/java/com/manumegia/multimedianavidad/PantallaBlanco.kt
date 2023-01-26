@@ -11,6 +11,10 @@ class PantallaBlanco : AppCompatActivity() {
         setContentView(binding.root)
 
         val pCreado: Personaje = intent.getSerializableExtra("personajeCreado") as Personaje
-        binding.textView2.text = pCreado.toString()
+        var oE = intent.getStringExtra("objetoEntra")
+        var oNE = intent.getStringExtra("objetoNoEntra")
+        binding.textPersonaje.text = pCreado.toString()
+        binding.textPersonaje.text = oE
+        binding.textPersonaje.text = oNE
     }
 }
