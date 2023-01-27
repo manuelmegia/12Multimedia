@@ -19,10 +19,13 @@ class PantallaEncontrarObjeto : AppCompatActivity() {
         }
         binding.btnRecoger.setOnClickListener {
             val intent = Intent(this, PantallaBlanco::class.java)
+
             intent.putExtra("objetoEntra", miPersonaje().mochila.addArticulo(espadaCrucifijo))
             miPersonaje().mochila.addArticulo(espadaCrucifijo)
+
             intent.putExtra("objetoNoEntra", miPersonaje().mochila.addArticulo(objetoSobrante))
             miPersonaje().mochila.addArticulo(objetoSobrante)
+
             intent.putExtra("personajeCreado", miPersonaje())
             startActivity(intent)
         }
