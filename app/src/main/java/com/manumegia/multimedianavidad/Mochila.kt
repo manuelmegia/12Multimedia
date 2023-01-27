@@ -12,9 +12,9 @@ class Mochila(private var pesoMochila: Int) : java.io.Serializable {
             contenido.add(articulo)
             this.pesoMochila -= articulo.getPeso()
         } else {
-            return "La mochila está llena, debes vender artículos"
+            return "El articulo '" + articulo.getId() + "' no puede entrar porque la mochila está llena, debes vender artículos"
         }
-        return "Peso restante de la Mochila: " + pesoMochila
+        return "Articulo '" + articulo.getId() + "' introducido, peso restante de la Mochila: " + pesoMochila
     }
 
     fun getContenido(): ArrayList<Articulo> {
@@ -25,13 +25,13 @@ class Mochila(private var pesoMochila: Int) : java.io.Serializable {
         return "Mochila(pesoMochila=$pesoMochila, contenido=$contenido)"
     }
 
-    /*fun findObjeto(id: String): Int {
+    fun findObjeto(id: String): Int {
         for ((indice, item) in contenido.withIndex()) {
             if (item.getId() == id) {
                 return indice
             }
         }
         return -1
-    }*/
+    }
 
 }

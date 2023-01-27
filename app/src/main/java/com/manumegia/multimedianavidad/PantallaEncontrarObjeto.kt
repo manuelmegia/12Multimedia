@@ -18,11 +18,13 @@ class PantallaEncontrarObjeto : AppCompatActivity() {
             this.navigateTo(PantallaDado::class.java)
         }
         binding.btnRecoger.setOnClickListener {
-            val intent = Intent(this, PantallaClases::class.java)
+            val intent = Intent(this, PantallaBlanco::class.java)
             intent.putExtra("objetoEntra", miPersonaje().mochila.addArticulo(espadaCrucifijo))
-            intent.putExtra("objetoNoEntra",miPersonaje().mochila.addArticulo(objetoSobrante))
-
-            this.navigateTo(PantallaBlanco::class.java)
+            miPersonaje().mochila.addArticulo(espadaCrucifijo)
+            intent.putExtra("objetoNoEntra", miPersonaje().mochila.addArticulo(objetoSobrante))
+            miPersonaje().mochila.addArticulo(objetoSobrante)
+            intent.putExtra("personajeCreado", miPersonaje())
+            startActivity(intent)
         }
     }
 

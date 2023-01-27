@@ -8,7 +8,7 @@ class Personaje (private var nombre: String,
     ): java.io.Serializable{
 
 
-    var pesoMochila: Int = 5
+    var pesoMochila: Int = 10
     var mochila = Mochila(pesoMochila)
     var fuerza: Int = Random.nextInt(10, 16)
     var defensa: Int = Random.nextInt(1, 6)
