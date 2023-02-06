@@ -12,30 +12,28 @@ class PantallaClases : AppCompatActivity() {
         setContentView(binding.root)
 
         binding.bElRSiguiente.isEnabled = false
-        var envio_imagen = ""
-        val clase = intent.getStringExtra("tipoClase")
 
         binding.bElRElfo.setOnClickListener {
             binding.imgElRaza.setImageResource(R.drawable.jesucristo_elfo)
-            envio_imagen = "elfo"
+            pPruebas.raza = "elfo"
             binding.bElRSiguiente.isEnabled = true
         }
 
         binding.bElREnano.setOnClickListener {
             binding.imgElRaza.setImageResource(R.drawable.jesucristoenano)
-            envio_imagen = "enano"
+            pPruebas.raza = "enano"
             binding.bElRSiguiente.isEnabled = true
         }
 
         binding.bElRGoblin.setOnClickListener {
             binding.imgElRaza.setImageResource(R.drawable.jesucristo_goblin)
-            envio_imagen = "goblin"
+            pPruebas.raza = "goblin"
             binding.bElRSiguiente.isEnabled = true
         }
 
         binding.bElRHumano.setOnClickListener {
             binding.imgElRaza.setImageResource(R.drawable.jesucristo_humano)
-            envio_imagen = "humano"
+            pPruebas.raza = "humano"
             binding.bElRSiguiente.isEnabled = true
         }
 
@@ -46,8 +44,6 @@ class PantallaClases : AppCompatActivity() {
 
         binding.bElRSiguiente.setOnClickListener {
             val intent = Intent(this, PantallaConfirmacionPersonaje::class.java)
-            intent.putExtra("tipoRaza", envio_imagen)
-            intent.putExtra("tipoClase", clase)
             startActivity(intent)
         }
 

@@ -2,9 +2,9 @@ package com.manumegia.multimedianavidad
 
 import kotlin.random.Random
 
-class Personaje (private var nombre: String,
-                 private var raza: String,
-                 private var clase: String,
+class Personaje (var nombre: String,
+                 var raza: String,
+                 var clase: String,
     ): java.io.Serializable{
 
 

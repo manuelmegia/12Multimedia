@@ -14,17 +14,15 @@ class PantallaConfirmacionPersonaje : AppCompatActivity() {
         setContentView(binding.root)
 
         binding.btCAventura.isEnabled = false
-        val raza = intent.getStringExtra("tipoRaza")
-        val clase = intent.getStringExtra("tipoClase")
 
-        when (raza){
+        when (pPruebas.raza){
             "elfo" -> binding.tuRazaFoto.setImageResource(R.drawable.jesucristo_elfo)
             "enano" -> binding.tuRazaFoto.setImageResource(R.drawable.jesucristoenano)
             "humano" -> binding.tuRazaFoto.setImageResource(R.drawable.jesucristo_humano)
             "goblin" -> binding.tuRazaFoto.setImageResource(R.drawable.jesucristo_goblin)
         }
 
-        when (clase){
+        when (pPruebas.clase){
             "guerrero" -> binding.tuClaseFoto.setImageResource(R.drawable.jesucristo_guerrero)
             "berserker" -> binding.tuClaseFoto.setImageResource(R.drawable.jesucristo_berserkeraii)
             "mago" -> binding.tuClaseFoto.setImageResource(R.drawable.jesucristo_mago)
@@ -47,7 +45,7 @@ class PantallaConfirmacionPersonaje : AppCompatActivity() {
 
         binding.btCAventura.setOnClickListener {
             var nombre = binding.textNombre.text.toString()
-            var p1 = Personaje(nombre, raza.toString(), clase.toString())
+            var p1 = Personaje(nombre, pPruebas.raza, pPruebas.clase)
 
             val intent = Intent(this, PantallaDado::class.java)
             intent.putExtra("personajeCreado", p1)
