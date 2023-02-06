@@ -20,7 +20,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="400dp"
                 android:layout_weight="1"
-                app:srcCompat="@drawable/microsoftteams_image__3_" />
+                app:srcCompat="@drawable/enemigo_rana_mafiosa" />
         </TableRow>
 
         <TableRow
@@ -28,19 +28,27 @@
             android:layout_height="match_parent"
             android:layout_weight="1" >
 
-            <Button
-                android:id="@+id/btnLuchar"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
                 android:layout_weight="1"
-                android:text="Luchar" />
+                android:orientation="horizontal">
 
-            <Button
-                android:id="@+id/btnHuir"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="Huir" />
+                <Button
+                    android:id="@+id/btnHuir"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Huir" />
+
+                <Button
+                    android:id="@+id/btnLuchar"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Luchar" />
+            </LinearLayout>
+
         </TableRow>
 
     </TableLayout>

@@ -28,30 +28,38 @@
             android:layout_height="match_parent"
             android:layout_weight="1">
 
-            <Button
-                android:id="@+id/bElRHumano"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
                 android:layout_weight="1"
-                android:text="Humano" />
+                android:orientation="horizontal">
 
-            <Button
-                android:id="@+id/bElRElfo"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Elfo" />
+                <Button
+                    android:id="@+id/bElREnano"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Enano" />
 
-            <Button
-                android:id="@+id/bElREnano"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Enano" />
+                <Button
+                    android:id="@+id/bElRElfo"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Elfo" />
 
-            <Button
-                android:id="@+id/bElRGoblin"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Goblin" />
+                <Button
+                    android:id="@+id/bElRHumano"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Humano" />
+
+                <Button
+                    android:id="@+id/bElRGoblin"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Goblin" />
+            </LinearLayout>
+
         </TableRow>
 
         <TableRow
@@ -59,18 +67,27 @@
             android:layout_height="match_parent"
             android:layout_weight="1" >
 
-            <Button
-                android:id="@+id/bAnteriorClase"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
                 android:layout_weight="1"
-                android:text="Anterior" />
+                android:orientation="horizontal">
 
-            <Button
-                android:id="@+id/bElRSiguiente"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Siguiente" />
+                <Button
+                    android:id="@+id/bAnteriorClase"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Anterior" />
+
+                <Button
+                    android:id="@+id/bElRSiguiente"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Siguiente" />
+            </LinearLayout>
+
         </TableRow>
 
     </TableLayout>

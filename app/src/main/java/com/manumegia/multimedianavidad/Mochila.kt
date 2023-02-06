@@ -1,5 +1,8 @@
 package com.manumegia.multimedianavidad
 
+import android.content.Context
+import android.widget.Toast
+
 class Mochila(private var pesoMochila: Int) : java.io.Serializable {
     private var contenido = ArrayList<Articulo>()
 
@@ -7,14 +10,14 @@ class Mochila(private var pesoMochila: Int) : java.io.Serializable {
         return pesoMochila
     }
 
-    fun addArticulo(articulo: Articulo): String {
+    fun addArticulo(articulo: Articulo, con: Context) {
         if (articulo.getPeso() <= pesoMochila) {
             contenido.add(articulo)
             this.pesoMochila -= articulo.getPeso()
         } else {
-            return "El articulo '" + articulo.getId() + "' no puede entrar porque la mochila está llena, debes vender artículos"
+            return Toast.makeText(con, "El articulo '" + articulo.getId() + "' no puede entrar porque la mochila está llena, debes vender artículos", Toast.LENGTH_LONG).show()
         }
-        return "Articulo '" + articulo.getId() + "' introducido, peso restante de la Mochila: " + pesoMochila
+        return Toast.makeText(con.applicationContext, "Articulo '" + articulo.getId() + "' introducido, peso restante de la Mochila: " + pesoMochila, Toast.LENGTH_LONG).show()
     }
 
     fun getContenido(): ArrayList<Articulo> {

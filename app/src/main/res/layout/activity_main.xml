@@ -28,34 +28,44 @@
             android:layout_height="match_parent"
             android:layout_weight="1">
 
-            <Button
-                android:id="@+id/bElPBerserker"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="Berserker"
-                android:textSize="13sp" />
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
 
-            <Button
-                android:id="@+id/bElPLadron"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Ladron"
-                android:textSize="13sp" />
+                <Button
+                    android:id="@+id/bElPBerserker"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Berserker"
+                    android:textSize="13sp" />
 
-            <Button
-                android:id="@+id/bElPMago"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Mago"
-                android:textSize="13sp" />
+                <Button
+                    android:id="@+id/bElPLadron"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Ladron"
+                    android:textSize="13sp" />
 
-            <Button
-                android:id="@+id/bElPGuerrero"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Guerrero"
-                android:textSize="13sp" />
+                <Button
+                    android:id="@+id/bElPGuerrero"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Guerrero"
+                    android:textSize="13sp" />
+
+                <Button
+                    android:id="@+id/bElPMago"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Mago"
+                    android:textSize="13sp" />
+            </LinearLayout>
+
         </TableRow>
 
         <TableRow
