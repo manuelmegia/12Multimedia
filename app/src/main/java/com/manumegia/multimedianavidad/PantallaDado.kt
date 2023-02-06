@@ -14,7 +14,7 @@ class PantallaDado : AppCompatActivity() {
 
         binding.imgBtnDado.setOnClickListener {
             //var eleccZona = Random.nextInt(1, 5)
-            var eleccZona = 1
+            var eleccZona = 3
             when(eleccZona) {
                 1 -> this.navigateTo(PantallaEncontrarObjeto::class.java)
                 2 -> this.navigateTo(PantallaEncontrarCiudad::class.java)
