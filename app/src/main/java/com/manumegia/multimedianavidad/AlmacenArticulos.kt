@@ -17,3 +17,8 @@ fun generarArticuloRandom() {
     var i = Random.nextInt(almacenArticulo.size)
     ultimoArticuloSeleccionado = almacenArticulo[i]
 }
+fun generarYObtenerArticuloRandom(): Articulo {
+    var i = Random.nextInt(almacenArticulo.size)
+    ultimoArticuloSeleccionado = almacenArticulo[i]
+    return ultimoArticuloSeleccionado
+}

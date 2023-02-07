@@ -10,14 +10,18 @@ class Mochila(private var pesoMochila: Int) : java.io.Serializable {
         return pesoMochila
     }
 
+    fun setPesoMochila(nuevoPeso: Int){
+        pesoMochila = nuevoPeso
+    }
+
     fun addArticulo(articulo: Articulo, con: Context) {
         if (articulo.getPeso() <= pesoMochila) {
             contenido.add(articulo)
             this.pesoMochila -= articulo.getPeso()
         } else {
-            return Toast.makeText(con, "El articulo '" + articulo.getId() + "' no puede entrar porque la mochila está llena, debes vender artículos", Toast.LENGTH_LONG).show()
+            return Toast.makeText(con, "El articulo '" + articulo.getId() + "' no puede entrar porque la mochila está llena, debes vender artículos", Toast.LENGTH_SHORT).show()
         }
-        return Toast.makeText(con.applicationContext, "Articulo '" + articulo.getId() + "' introducido, peso restante de la Mochila: " + pesoMochila, Toast.LENGTH_LONG).show()
+        return Toast.makeText(con.applicationContext, "Articulo '" + articulo.getId() + "' introducido, peso restante de la Mochila: " + pesoMochila, Toast.LENGTH_SHORT).show()
     }
 
     fun getContenido(): ArrayList<Articulo> {

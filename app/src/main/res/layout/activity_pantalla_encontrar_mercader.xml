@@ -17,7 +17,7 @@
             android:layout_weight="1">
 
             <ImageView
-                android:id="@+id/imageView3"
+                android:id="@+id/imgMercader"
                 android:layout_width="wrap_content"
                 android:layout_height="400dp"
                 android:layout_weight="1"
@@ -31,6 +31,7 @@
             android:layout_weight="1">
 
             <LinearLayout
+                android:id="@+id/vistaMercader"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
@@ -49,6 +50,82 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:text="Continuar" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/vistaComerciar"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:orientation="horizontal"
+                android:visibility="gone">
+
+                <Button
+                    android:id="@+id/btnComprarMercader"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Comprar" />
+
+                <Button
+                    android:id="@+id/btnVenderMercader"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Vender" />
+
+                <Button
+                    android:id="@+id/btnCancelarMercader"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Cancelar" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/vistaComprar"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:orientation="vertical"
+                android:visibility="gone">
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1" >
+
+                    <TextView
+                        android:id="@+id/textViewPrecio"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Precio: " />
+
+                    <Spinner
+                        android:id="@+id/spinnerCantidades"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content" />
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1">
+
+                    <Button
+                        android:id="@+id/btnComprarComprar"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Comprar" />
+
+                    <Button
+                        android:id="@+id/btnComprarCancelar"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Volver" />
+                </TableRow>
             </LinearLayout>
 
         </TableRow>

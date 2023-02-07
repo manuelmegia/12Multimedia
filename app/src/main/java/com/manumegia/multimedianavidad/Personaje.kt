@@ -1,5 +1,7 @@
 package com.manumegia.multimedianavidad
 
+import android.content.Context
+import android.widget.Toast
 import kotlin.random.Random
 
 class Personaje (var nombre: String,
@@ -16,11 +18,33 @@ class Personaje (var nombre: String,
     var monedero = HashMap<Int, Int>()
 
     init {
-        monedero.put(1, 0)
-        monedero.put(5, 0)
-        monedero.put(10, 0)
-        monedero.put(25, 0)
-        monedero.put(100, 0)
+        monedero[1] = 0
+        monedero[5] = 0
+        monedero[10] = 0
+        monedero[25] = 0
+        monedero[100] = 0
+    }
+
+    fun cashConverter(articulo: Articulo) {
+        var total = 0
+        var i = 0
+        var coins = arrayListOf(1, 5, 10, 25, 100)
+        coins.sortDescending()
+
+        while (total < articulo.getValor() && i < coins.size) {
+            if (total + coins[i] <= articulo.getValor()) {
+                total += coins[i]
+                monedero[coins[i]] = monedero[coins[i]]!! + 1
+            } else
+                i++
+        }
+    }
+
+    fun ventaObjeto(articulo: Articulo, con: Context) {
+        cashConverter(articulo)
+        mochila.getContenido().remove(articulo)
+        pPruebas.mochila.setPesoMochila(pPruebas.mochila.getPesoMochila() + articulo.getPeso())
+        return Toast.makeText(con.applicationContext, "Articulo '" + articulo.getId() + "' eliminado, peso restante de la Mochila: " + pPruebas.mochila.getPesoMochila(), Toast.LENGTH_SHORT).show()
     }
 
     override fun toString(): String {
