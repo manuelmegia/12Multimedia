@@ -29,7 +29,10 @@ class Articulo(
         return id
     }
 
-    override fun toString(): String {
+    fun toStringMostrarTodo(): String {
         return "[ID:$id, Peso:$peso, Valor:$valor], Vida:$vida"
+    }
+    override fun toString(): String {
+        return id
     }
 }

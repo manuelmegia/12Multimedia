@@ -6,6 +6,7 @@ import android.view.View
 import android.widget.LinearLayout
 
 var pPruebas = Personaje("as", "das", "gsdgs")
+
 internal lateinit var viewGone: LinearLayout
 fun Activity.navigateTo(alaQueVoy: Class<*>) {
     var intent = Intent(this, alaQueVoy)
