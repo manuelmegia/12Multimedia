@@ -28,7 +28,6 @@ class PantallaEncontrarEnemigo : AppCompatActivity() {
                 turnoEnemigo()
         }
         binding.btnAtacarLucha.setOnClickListener {
-
         }
     }
 

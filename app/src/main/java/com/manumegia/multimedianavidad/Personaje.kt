@@ -48,7 +48,7 @@ class Personaje (var nombre: String,
     }
 
     fun ventaMultiplesObjetos(articulo: Articulo, numItems: Int, con: Context) {
-        if (pPruebas.mochila.howManyItems(articulo) > numItems) {
+        if (pPruebas.mochila.howManyItems(articulo) >= numItems) {
             var aux = 0
             var listAux = arrayListOf<Articulo>()
             listAux.addAll(pPruebas.mochila.getContenido())
@@ -63,7 +63,7 @@ class Personaje (var nombre: String,
             pPruebas.mochila.setContenido(listAux)
             return Toast.makeText(
                 con.applicationContext,
-                "Articulo '" + articulo.getId() + "' eliminado " + numItems + "veces," + "peso restante de la Mochila: " + pPruebas.mochila.getPesoMochila(),
+                "Articulo '" + articulo.getId() + "' eliminado " + numItems + " veces, " + "peso restante de la Mochila: " + pPruebas.mochila.getPesoMochila(),
                 Toast.LENGTH_SHORT
             ).show()
         } else
