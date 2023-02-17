@@ -42,9 +42,36 @@ class Personaje (var nombre: String,
 
     fun ventaObjeto(articulo: Articulo, con: Context) {
         cashConverter(articulo)
-        mochila.getContenido().remove(articulo)
+        pPruebas.mochila.getContenido().remove(articulo)
         pPruebas.mochila.setPesoMochila(pPruebas.mochila.getPesoMochila() + articulo.getPeso())
         return Toast.makeText(con.applicationContext, "Articulo '" + articulo.getId() + "' eliminado, peso restante de la Mochila: " + pPruebas.mochila.getPesoMochila(), Toast.LENGTH_SHORT).show()
+    }
+
+    fun ventaMultiplesObjetos(articulo: Articulo, numItems: Int, con: Context) {
+        if (pPruebas.mochila.howManyItems(articulo) > numItems) {
+            var aux = 0
+            var listAux = arrayListOf<Articulo>()
+            listAux.addAll(pPruebas.mochila.getContenido())
+            for (n in pPruebas.mochila.getContenido()) {
+                if (aux < numItems && articulo.getId() == n.getId()) {
+                    aux++
+                    cashConverter(n)
+                    listAux.remove(n)
+                    pPruebas.mochila.setPesoMochila(pPruebas.mochila.getPesoMochila() + articulo.getPeso())
+                }
+            }
+            pPruebas.mochila.setContenido(listAux)
+            return Toast.makeText(
+                con.applicationContext,
+                "Articulo '" + articulo.getId() + "' eliminado " + numItems + "veces," + "peso restante de la Mochila: " + pPruebas.mochila.getPesoMochila(),
+                Toast.LENGTH_SHORT
+            ).show()
+        } else
+            return Toast.makeText(
+                con.applicationContext,
+                "¡No tienes tantos artículos de este tipo en tu mochila!",
+                Toast.LENGTH_SHORT
+            ).show()
     }
 
     override fun toString(): String {
