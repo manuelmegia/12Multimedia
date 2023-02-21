@@ -57,7 +57,7 @@ class PantallaEncontrarEnemigo : AppCompatActivity() {
     }
 
     fun turnoEnemigo() {
-        pPruebas.vida -= 20 / pPruebas.defensa
+        pPruebas.vida -= enemigo.ataque / pPruebas.defensa
         findViewById<ProgressBar>(R.id.barraVidaUsuario).progress = pPruebas.vida
     }
 

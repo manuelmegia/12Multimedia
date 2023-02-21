@@ -16,25 +16,25 @@ class Personaje (var nombre: String,
     var defensa: Int = Random.nextInt(1, 6)
     var vida: Int = 200
     var vidaMax: Int = 200
-    var monedero = HashMap<Int, Int>()
+    var monedero = HashMap<String, Int>()
 
     init {
-        monedero[1] = 0
-        monedero[5] = 0
-        monedero[10] = 0
-        monedero[25] = 0
-        monedero[100] = 0
+        monedero["1"] = 0
+        monedero["5"] = 0
+        monedero["10"] = 0
+        monedero["25"] = 0
+        monedero["100"] = 0
     }
 
     fun cashConverter(articulo: Articulo) {
         var total = 0
         var i = 0
-        var coins = arrayListOf(1, 5, 10, 25, 100)
+        var coins = arrayListOf("1", "5", "10", "25", "100")
         coins.sortDescending()
 
         while (total < articulo.getValor() && i < coins.size) {
-            if (total + coins[i] <= articulo.getValor()) {
-                total += coins[i]
+            if (total + coins[i].toInt() <= articulo.getValor()) {
+                total += coins[i].toInt()
                 monedero[coins[i]] = monedero[coins[i]]!! + 1
             } else
                 i++
