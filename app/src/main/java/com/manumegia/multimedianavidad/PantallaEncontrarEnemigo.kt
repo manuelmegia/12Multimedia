@@ -73,10 +73,11 @@ class PantallaEncontrarEnemigo : AppCompatActivity() {
 
     fun checkHP() {
         if (pPruebas.vida <= 0) {
-            navigateTo(PantallaBlanco::class.java)
+            navigateTo(PantallaPerderPelea::class.java)
         } else if (enemigo.vida <= 0) {
             Toast.makeText(this, "¡¡Victoria!!", Toast.LENGTH_SHORT).show()
             findObjetoAlmacen("pocionVida")
+            pPruebas.monedero["100"] = pPruebas.monedero["100"]!! + 1
             pPruebas.mochila.addMultiplesArticulos(ultimoArticuloSeleccionado, 3, this)
             navigateTo(PantallaDado::class.java)
         }
