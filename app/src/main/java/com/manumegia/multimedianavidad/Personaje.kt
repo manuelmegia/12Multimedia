@@ -15,6 +15,7 @@ class Personaje (var nombre: String,
     var fuerza: Int = Random.nextInt(10, 16)
     var defensa: Int = Random.nextInt(1, 6)
     var vida: Int = 200
+    var vidaMax: Int = 200
     var monedero = HashMap<Int, Int>()
 
     init {

@@ -108,11 +108,19 @@
                     android:text="Atacar" />
 
                 <Button
+                    android:id="@+id/btnObjetoLucha"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Objeto" />
+
+                <Button
                     android:id="@+id/btnHuirLucha"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:text="Huir" />
+
             </LinearLayout>
 
         </TableRow>

@@ -17,6 +17,15 @@ fun generarArticuloRandom() {
     var i = Random.nextInt(almacenArticulo.size)
     ultimoArticuloSeleccionado = almacenArticulo[i]
 }
+
+
+fun findObjetoAlmacen(id: String){
+    for ((indice, item) in almacenArticulo.withIndex()) {
+        if (item.getId() == id) {
+            ultimoArticuloSeleccionado = item
+        }
+    }
+}
 fun generarYObtenerArticuloRandom(): Articulo {
     var i = Random.nextInt(almacenArticulo.size)
     ultimoArticuloSeleccionado = almacenArticulo[i]
