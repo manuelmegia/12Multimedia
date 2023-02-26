@@ -2,10 +2,12 @@ package com.manumegia.multimedianavidad
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.os.UserManager
 import android.view.View
 import android.widget.AdapterView
 import android.widget.ArrayAdapter
 import android.widget.Toast
+import androidx.core.widget.doOnTextChanged
 import com.manumegia.multimedianavidad.databinding.ActivityPantallaEncontrarMercaderBinding
 
 class PantallaEncontrarMercader : AppCompatActivity() {
@@ -30,7 +32,6 @@ class PantallaEncontrarMercader : AppCompatActivity() {
         binding.btnVenderMercader.setOnClickListener {
             if (pPruebas.mochila.getContenido().isNotEmpty()){
                 navigateViews(binding.vistaComprar)
-                binding.viewCantidadAComprar.visibility = View.GONE
                 binding.btnComprarComprar.text = "Vender"
                 binding.imgMercader.setImageResource(pPruebas.mochila.getContenido()[0].getFoto())
                 binding.spinnerCantidades.adapter = ArrayAdapter(this, android.R.layout.simple_spinner_item, pPruebas.mochila.getContenido())
@@ -43,14 +44,23 @@ class PantallaEncontrarMercader : AppCompatActivity() {
                     }
                 }
                 binding.btnComprarComprar.setOnClickListener {
-                    pPruebas.ventaObjeto(pPruebas.mochila.getContenido()[pPruebas.mochila.findObjeto(
-                        ultimoArticuloSeleccionado.getId())], this)
+                    try {
+                    pPruebas.ventaMultiplesObjetos(pPruebas.mochila.getContenido()[pPruebas.mochila.findObjeto(
+                        ultimoArticuloSeleccionado.getId())], binding.editTextNumeroItems.text.toString().toInt(), this)
                     binding.btnVenderMercader.performClick()
+                    } catch (e: Exception) {
+                        Toast.makeText(
+                            this,
+                            "Debes seleccionar el número de artículos que quieres vender",
+                            Toast.LENGTH_LONG
+                        ).show()
+                        println(e)
+                    }
                 }
-                binding.textViewPrecio.text = "Precio: " + ultimoArticuloSeleccionado.getValor() + " PuermaCoins"
+
             } else {
                 Toast.makeText(
-                    this.applicationContext,
+                    this,
                     "No existen artículos en esta mochila",
                     Toast.LENGTH_LONG
                 ).show()
@@ -58,7 +68,6 @@ class PantallaEncontrarMercader : AppCompatActivity() {
                 binding.imgMercader.setImageResource(R.drawable.mercader_rana_judio)
             }
         }
-
         binding.btnComprarMercader.setOnClickListener {
             navigateViewsFirst(binding.vistaComprar, binding.vistaComerciar)
             binding.btnComprarComprar.text = "Comprar"
@@ -73,13 +82,30 @@ class PantallaEncontrarMercader : AppCompatActivity() {
                 }
             }
             binding.btnComprarComprar.setOnClickListener {
-                pPruebas.mochila.addArticulo(ultimoArticuloSeleccionado, this)
+                try {
+                    pPruebas.mochila.addMultiplesArticulos(ultimoArticuloSeleccionado, binding.editTextNumeroItems.text.toString().toInt(), this)
+                } catch (e: Exception) {
+                    Toast.makeText(
+                        this,
+                        "Debes seleccionar el número de artículos que quieres comprar",
+                        Toast.LENGTH_LONG
+                    ).show()
+                println(e)
+            }
             }
         }
-
         binding.btnComprarCancelar.setOnClickListener {
             navigateViewsFirst(binding.vistaComerciar, binding.vistaComprar)
             binding.imgMercader.setImageResource(R.drawable.mercader_rana_judio)
+        }
+        binding.editTextNumeroItems.doOnTextChanged { text, start, before, count ->
+            try {
+                binding.textViewPrecio.text = "Precio: " + text.toString()
+                    .toInt() * ultimoArticuloSeleccionado.getValor() * 12.5
+            } catch (e: Exception) {
+                binding.textViewPrecio.text = "Precio: 0"
+                println(e)
+            }
         }
     }
 }
