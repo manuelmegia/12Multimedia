@@ -11,8 +11,6 @@ class Articulo(
     private var vida: Int = 20
 ) : java.io.Serializable {
 
-    private lateinit var foto: ImageView
-
     fun getFoto(): Int {
         return fto
     }

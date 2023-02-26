@@ -28,13 +28,12 @@ class Login : AppCompatActivity() {
                 binding.editTextTextPassword.text.toString()
             ).addOnCompleteListener { task ->
                 if (task.isSuccessful) {
-                    database = FirebaseDatabase.getInstance().getReference("Usuarios")
-                    database.child(auth.currentUser?.uid.toString()).get().addOnCompleteListener {
+                    database = FirebaseDatabase.getInstance().reference
+                    database.child("AlmacenArticulos").get().addOnCompleteListener {
                         if (it.isSuccessful) {
                             val products = it.result.getValue(EstructuraDB::class.java)
                             if (products != null) {
-                                almacenArticulo = products.misArticulos!!
-
+                                almacenArticulo = products.AlmacenArticulos!!?: ArrayList<Articulo>()
                                 Log.d(ContentValues.TAG, products.toString())
                             } else {
                                 Log.d(ContentValues.TAG, it.exception?.message.toString())

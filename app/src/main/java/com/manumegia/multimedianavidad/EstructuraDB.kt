@@ -1,3 +1,3 @@
 package com.manumegia.multimedianavidad
 
-data class EstructuraDB (var misArticulos: ArrayList<Articulo>)
+data class EstructuraDB(val AlmacenArticulos: ArrayList<Articulo>? = null)
