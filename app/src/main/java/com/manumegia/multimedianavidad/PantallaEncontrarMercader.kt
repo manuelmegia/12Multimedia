@@ -14,8 +14,6 @@ class PantallaEncontrarMercader : AppCompatActivity() {
         val binding = ActivityPantallaEncontrarMercaderBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        llenarAlmacen()
-
         binding.btnContinuar.setOnClickListener {
             this.navigateTo(PantallaDado::class.java)
         }

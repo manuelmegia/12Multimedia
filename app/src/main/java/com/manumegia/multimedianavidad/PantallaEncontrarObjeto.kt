@@ -9,8 +9,6 @@ class PantallaEncontrarObjeto : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         val binding = ActivityPantallaEncontrarObjetoBinding.inflate(layoutInflater)
         setContentView(binding.root)
-
-        llenarAlmacen()
         generarArticuloRandom()
 
         binding.imageView4.setImageResource(ultimoArticuloSeleccionado.getFoto())

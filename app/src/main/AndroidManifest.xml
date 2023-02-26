@@ -13,6 +13,15 @@
         android:theme="@style/Theme.MultimediaNavidad"
         tools:targetApi="31">
         <activity
+            android:name=".CargarPartidas"
+            android:exported="false" />
+        <activity
+            android:name=".Registro"
+            android:exported="false" />
+        <activity
+            android:name=".PantallaDado"
+            android:exported="false" />
+        <activity
             android:name=".PantallaEncontrarEnemigo"
             android:exported="false">
             <meta-data
@@ -55,7 +64,7 @@
                 android:value="" />
         </activity>
         <activity
-            android:name=".PantallaDado"
+            android:name=".Login"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

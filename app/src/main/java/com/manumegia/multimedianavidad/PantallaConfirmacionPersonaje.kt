@@ -5,13 +5,19 @@ import android.os.Bundle
 import android.text.Editable
 import android.text.TextWatcher
 import androidx.appcompat.app.AppCompatActivity
+import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.database.DatabaseReference
+import com.google.firebase.database.FirebaseDatabase
 import com.manumegia.multimedianavidad.databinding.ActivityPantallaConfirmacionPersonajeBinding
 
 class PantallaConfirmacionPersonaje : AppCompatActivity() {
+    private lateinit var auth: FirebaseAuth
+    private lateinit var database: DatabaseReference
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         val binding = ActivityPantallaConfirmacionPersonajeBinding.inflate(layoutInflater)
         setContentView(binding.root)
+        auth= FirebaseAuth.getInstance()
 
         binding.btCAventura.isEnabled = false
 
@@ -44,11 +50,12 @@ class PantallaConfirmacionPersonaje : AppCompatActivity() {
         }
 
         binding.btCAventura.setOnClickListener {
-            var nombre = binding.textNombre.text.toString()
-            var p1 = Personaje(nombre, pPruebas.raza, pPruebas.clase)
+            pPruebas.nombre = binding.textNombre.text.toString()
+
+            database = FirebaseDatabase.getInstance().getReference("Usuarios")
+            database = FirebaseDatabase.getInstance().getReference(auth.currentUser?.uid.toString())
 
             val intent = Intent(this, PantallaDado::class.java)
-            intent.putExtra("personajeCreado", p1)
             startActivity(intent)
         }
     }

@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "554009262241",
+    "firebase_url": "https://multimediabbdd-default-rtdb.europe-west1.firebasedatabase.app",
+    "project_id": "multimediabbdd",
+    "storage_bucket": "multimediabbdd.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:554009262241:android:4169d36438e667f7df18e0",
+        "android_client_info": {
+          "package_name": "com.manumegia.multimedianavidad"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "554009262241-d0imq2l57lbvf0utmi9g2s0ket18ft22.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDhj5DJ_ZovzlktVmsNao5KHcvSQnw35g4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "554009262241-d0imq2l57lbvf0utmi9g2s0ket18ft22.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

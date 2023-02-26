@@ -10,7 +10,6 @@ var pPruebas = Personaje("as", "das", "gsdgs")
 internal lateinit var viewGone: LinearLayout
 fun Activity.navigateTo(alaQueVoy: Class<*>) {
     var intent = Intent(this, alaQueVoy)
-    intent.putExtra("personajeCreado", pPruebas)
     startActivity(intent)
 }
 
