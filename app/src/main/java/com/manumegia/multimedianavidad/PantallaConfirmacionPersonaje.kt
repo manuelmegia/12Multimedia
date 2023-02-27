@@ -50,7 +50,6 @@ class PantallaConfirmacionPersonaje : AppCompatActivity() {
         }
 
         binding.btCAventura.setOnClickListener {
-            pPruebas.nombre = binding.textNombre.text.toString()
             //database = FirebaseDatabase.getInstance().getReference("Personajes")
             //database = FirebaseDatabase.getInstance().getReference(auth.currentUser?.uid.toString())
             listaPartidas.add(Personaje(binding.textNombre.text.toString(), pPruebas.raza, pPruebas.clase))
