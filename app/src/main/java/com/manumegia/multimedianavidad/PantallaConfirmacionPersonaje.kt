@@ -51,10 +51,10 @@ class PantallaConfirmacionPersonaje : AppCompatActivity() {
 
         binding.btCAventura.setOnClickListener {
             pPruebas.nombre = binding.textNombre.text.toString()
-
-            database = FirebaseDatabase.getInstance().getReference("Usuarios")
-            database = FirebaseDatabase.getInstance().getReference(auth.currentUser?.uid.toString())
-
+            //database = FirebaseDatabase.getInstance().getReference("Personajes")
+            //database = FirebaseDatabase.getInstance().getReference(auth.currentUser?.uid.toString())
+            listaPartidas.add(Personaje(binding.textNombre.text.toString(), pPruebas.raza, pPruebas.clase))
+            pPruebas = listaPartidas.last()
             val intent = Intent(this, PantallaDado::class.java)
             startActivity(intent)
         }

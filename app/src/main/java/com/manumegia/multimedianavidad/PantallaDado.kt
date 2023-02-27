@@ -21,7 +21,6 @@ class PantallaDado : AppCompatActivity() {
 
         binding.imgBtnDado.setOnClickListener {
             var eleccZona = Random.nextInt(1, 5)
-            eleccZona = 3
             when(eleccZona) {
                 1 -> this.navigateTo(PantallaEncontrarObjeto::class.java)
                 2 -> this.navigateTo(PantallaEncontrarCiudad::class.java)
@@ -32,7 +31,8 @@ class PantallaDado : AppCompatActivity() {
 
         binding.btnGuardarFirebase.setOnClickListener {
             database = FirebaseDatabase.getInstance().getReference("Personajes")
-            database.child(auth.currentUser?.uid.toString()).child(pPruebas.nombre).setValue(pPruebas).addOnSuccessListener {
+            database.child(auth.currentUser?.uid.toString()).child("ListaPersonajes").setValue(
+                listaPartidas).addOnSuccessListener {
                 Toast.makeText(this, "Successfully Saved", Toast.LENGTH_SHORT).show()
             }.addOnFailureListener {
                 Toast.makeText(this, "Failed", Toast.LENGTH_SHORT).show()

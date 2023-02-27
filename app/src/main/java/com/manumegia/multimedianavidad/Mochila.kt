@@ -5,7 +5,8 @@ import android.widget.Toast
 
 class Mochila(private var pesoMochila: Int) : java.io.Serializable {
     private var contenido = ArrayList<Articulo>()
-
+    constructor() : this(0) {
+    }
     fun getPesoMochila(): Int {
         return pesoMochila
     }

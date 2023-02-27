@@ -10,6 +10,8 @@ class Personaje(
     var clase: String,
 ) : java.io.Serializable {
 
+    constructor() : this("", "", "") {
+    }
 
     var pesoMochila: Int = 100
     var mochila = Mochila(pesoMochila)
@@ -81,6 +83,6 @@ class Personaje(
     }
 
     override fun toString(): String {
-        return "Personaje(nombre='$nombre', raza='$raza', clase='$clase', pesoMochila=$pesoMochila, mochila=$mochila, fuerza=$fuerza, defensa=$defensa, vida=$vida, monedero=$monedero)"
+        return nombre
     }
 }

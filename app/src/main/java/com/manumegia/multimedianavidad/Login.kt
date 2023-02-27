@@ -29,18 +29,20 @@ class Login : AppCompatActivity() {
             ).addOnCompleteListener { task ->
                 if (task.isSuccessful) {
                     database = FirebaseDatabase.getInstance().reference
-                    database.child("AlmacenArticulos").get().addOnCompleteListener {
+                    database.get().addOnCompleteListener {
                         if (it.isSuccessful) {
                             val products = it.result.getValue(EstructuraDB::class.java)
                             if (products != null) {
-                                almacenArticulo = products.AlmacenArticulos!!?: ArrayList<Articulo>()
+                                almacenArticulo = products.AlmacenArticulos!! ?: ArrayList<Articulo>()
                                 Log.d(ContentValues.TAG, products.toString())
                             } else {
                                 Log.d(ContentValues.TAG, it.exception?.message.toString())
                             }
-                            val intent = Intent(this, MainActivity::class.java)
+                            val intent = Intent(this, CargarCrearPersonaje::class.java)
                             startActivity(intent)
                             finish()
+                        } else {
+                            Log.d(ContentValues.TAG, it.exception?.message.toString())
                         }
                     }.addOnFailureListener { exception ->
                         Toast.makeText(

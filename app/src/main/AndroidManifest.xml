@@ -13,7 +13,7 @@
         android:theme="@style/Theme.MultimediaNavidad"
         tools:targetApi="31">
         <activity
-            android:name=".CargarPartidas"
+            android:name=".CargarCrearPersonaje"
             android:exported="false" />
         <activity
             android:name=".Registro"

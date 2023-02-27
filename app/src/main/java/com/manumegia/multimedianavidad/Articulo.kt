@@ -11,8 +11,18 @@ class Articulo(
     private var vida: Int = 20
 ) : java.io.Serializable {
 
+    constructor() : this("", 0, 0) {
+    }
+
     fun getFoto(): Int {
         return fto
+    }
+
+    fun setFoto(foto: Int) {
+        fto = foto
+    }
+    fun setId(ID: String) {
+        id = ID
     }
 
     fun getPeso(): Int {
